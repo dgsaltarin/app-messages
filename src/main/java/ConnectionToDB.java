@@ -8,10 +8,6 @@ public class ConnectionToDB {
         Connection connection = null;
 
         try{ connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/messages", "root", "admin");
-            if (connection!=null){
-                System.out.println("Conexión exitosa");
-            }
-
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Error al conectar a la base de datos");
