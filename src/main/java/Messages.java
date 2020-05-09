@@ -1,17 +1,19 @@
+import java.sql.Date;
+
 public class Messages {
 
     private int messageId;
     private String message;
-    private String messageAutor;
-    private String messageDate;
+    private String messageAuthor;
+    private Date messageDate;
 
     public Messages() {
     }
 
-    public Messages(int messageId, String message, String messageAutor, String messageDate) {
+    public Messages(int messageId, String message, String messageAuthor, Date messageDate) {
         this.messageId = messageId;
         this.message = message;
-        this.messageAutor = messageAutor;
+        this.messageAuthor = messageAuthor;
         this.messageDate = messageDate;
     }
 
@@ -31,19 +33,19 @@ public class Messages {
         this.message = message;
     }
 
-    public String getMessageAutor() {
-        return messageAutor;
+    public String getMessageAuthor() {
+        return messageAuthor;
     }
 
-    public void setMessageAutor(String messageAutor) {
-        this.messageAutor = messageAutor;
+    public void setMessageAuthor(String messageAuthor) {
+        this.messageAuthor = messageAuthor;
     }
 
-    public String getMessageDate() {
+    public Date getMessageDate() {
         return messageDate;
     }
 
-    public void setMessageDate(String messageDate) {
+    public void setMessageDate(Date messageDate) {
         this.messageDate = messageDate;
     }
 }
