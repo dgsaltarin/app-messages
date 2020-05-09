@@ -30,7 +30,12 @@ public class MessagesServices {
         }
     }
 
-    static void deleteMessage(){}
+    static void deleteMessage(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el id del mensaje que desea borrar:");
+        int messageId = scanner.nextInt();
+        MessagesDAO.deleteMessageOnDB(messageId);
+    }
 
     static void updateMessage(){}
 }

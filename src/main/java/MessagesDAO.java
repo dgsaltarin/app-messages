@@ -54,7 +54,23 @@ public class MessagesDAO {
         return messages;
     }
 
-    public static void deleteMessageOnDB(int messageID){}
+    public static void deleteMessageOnDB(int messageID){
+        ConnectionToDB connectionToDB = new ConnectionToDB();
+
+        try {
+            Connection connection = connectionToDB.getConnection();
+
+            String sql = "DELETE FROM messages WHERE id_message = " + messageID;
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+            System.out.println("Mensaje eliminado de manera correcta!");
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("Error al tratar de borrar el mensaje!");
+        }
+    }
 
     public static void updateMessageOnDB(Messages messages){}
 }
